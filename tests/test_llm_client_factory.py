@@ -18,7 +18,7 @@ class LLMClientFactoryTests(unittest.TestCase):
     def test_known_valid_model_does_not_emit_warning(self):
         with warnings.catch_warnings(record=True) as caught:
             warnings.simplefilter("always")
-            client = create_llm_client("openai", "gpt-5-mini")
+            client = create_llm_client("openai", "gpt-5.4-mini")
 
         self.assertEqual(client.provider, "openai")
         self.assertEqual(len(caught), 0)
